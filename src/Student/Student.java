@@ -9,8 +9,7 @@ public class Student {
     private String name;
     private String surname;
     private GregorianCalendar birth;
-    SimpleDateFormat format1 = new SimpleDateFormat(
-            "dd.MM.yyyy");
+    SimpleDateFormat format1 = new SimpleDateFormat("dd.MM.yyyy");
 
     public Student(String name, String surname, GregorianCalendar birth) {
         this.name = name;
