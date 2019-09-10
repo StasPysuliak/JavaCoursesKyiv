@@ -1,51 +1,71 @@
 package Student;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 
 public class StudentList {
     private  ArrayList<Student> list = new ArrayList<>();
-    //private int p = 0;
-    Student student = new Student("this student is removed");
+    private int num;
 
-    public void add(Student s) {
-        //list[p++] = s;
-        list.add(s);
+    public void add(Student student) {
+        list.add(student);
+        num = list.size();
     }
 
-    public Student get(int n) {
-        //return list[n];
-        return list.get(n);
+    public int getNum() {
+        System.out.println(num);
+        return num;
     }
 
     public int findName(String name) {
-        for(int i = 0; i < list.size(); i++) {
-            if(list.get(i).getName().equalsIgnoreCase(name))
-                return i;
+        for(int some = 0; some < num; some++) {
+            if(list.get(some).getName().equalsIgnoreCase(name)) {
+                getFullInfo(some);
+                return some;
+            }
         }
-        return -1;
+        return 0;
     }
 
     public int findSurname(String surName) {
-        for(int i = 0; i < list.size(); i++) {
-            if(list.get(i).getSurname().equalsIgnoreCase(surName))
-                return i;
+        for(int some = 0; some < num; some++) {
+            if(list.get(some).getSurname().equalsIgnoreCase(surName)) {
+                getFullInfo(some);
+                return some;
+            }
         }
-        return -1;
+        return 0;
     }
 
-    public int findDate(String findDate) {
-        for(int i = 0; i < list.size(); i++) {
-            if(list.get(i).getBirth().equalsIgnoreCase(findDate))
-                return  i;
+    public int findDate(String date) {
+        for(int some = 0; some < num; some++) {
+            if(list.get(some).getSurname().equalsIgnoreCase(date)) {
+                getFullInfo(some);
+                return some;
+            }
         }
-        return -1;
+        return 0;
     }
 
-    public void removeStudent(String name) {
-        for(int i = 0; i < list.size(); i++) {
-            if(list.get(i).getName().equalsIgnoreCase(name))
-                list.set(i,student);
+    public void remove(String name) {
+        for(int some = 0; some < num; some++) {
+            if (list.get(some).getName().equalsIgnoreCase(name)) {
+                list.remove(some);
+                num--;
+            }
         }
     }
+
+    public int getFullInfo(int some) {
+        String info = String.format("%s %s %s", list.get(some).getName(),
+                list.get(some).getSurname(), list.get(some).getBirth());
+        System.out.println(info);
+        return 0;
+    }
+
+    public int showFullInfo() {
+        for (int some = 0; some < num; some++)
+                getFullInfo(some);
+        return 0;
+    }
+
 }

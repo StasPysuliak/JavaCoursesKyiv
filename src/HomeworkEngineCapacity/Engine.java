@@ -1,9 +1,9 @@
 package HomeworkEngineCapacity;
 
 public class Engine {
-    private double mileage;
+    private double  mileage;
     private boolean started;
-    private double engCapacity;             //Об'єм двигуна л/100км
+    private double EngineCapacity;
 
     public Engine(double mileage) {
         this.mileage = mileage;
@@ -17,15 +17,15 @@ public class Engine {
         if (started)
             this.mileage += mileage;
     }
-    // HomeWork ---------------------------------------
-    public double getEngCapacity() {
-        return engCapacity;
+
+    public double getEngineCapacity() {
+        return EngineCapacity;
     }
 
-    public void setEngCapacity(double engCapacity) {
-        this.engCapacity += engCapacity;
+    public void setEngineCapacity(double EngineCapacity) {
+        this.EngineCapacity += EngineCapacity;
     }
-    // HomeWork ----------------------------------------
+
     public boolean isStarted() {
         return started;
     }

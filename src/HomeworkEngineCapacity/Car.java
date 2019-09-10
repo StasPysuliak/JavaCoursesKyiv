@@ -21,11 +21,7 @@ public class Car {
     public double getMileage() {
         return engine.getMileage();
     }
-    // HomeWork------------------------
-    public  double getEngCapacity() {
-        return engine.getEngCapacity();
-    }
-    // HomeWork------------------------
+
     public  void turnOn() {
         engine.turnOn();
     }
@@ -34,14 +30,15 @@ public class Car {
         engine.turnOff();
     }
 
-    public void start(int speed, double hours,double engCapacity) {
+    public double wastedFule() {
+        return engine.getEngineCapacity();
+    }
+
+    public void start(int speed, double hours,double engineCapacity) {
         if (engine.isStarted()) {
             double distance = hours * speed;
             engine.setMileage(distance);
-            //HomeWork-----------------------------
-            double fuel = engCapacity*distance/100;
-            engine.setEngCapacity(fuel);
-            //HomeWork-----------------------------
+            engine.setEngineCapacity(distance*engineCapacity/100);
         }
     }
 }
