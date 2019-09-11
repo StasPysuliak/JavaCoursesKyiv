@@ -1,13 +1,10 @@
 package exception;
 
 public class URLtest {
-
     public void ifURLisCorrect(String url) throws Exception{
 
         if(url.endsWith("&")) throw new SomeException("Forget parameter = value.");
-
         String[] url1 = url.split("&");
-
         for (int i = 0; i < url1.length; i++) {
             System.out.println(url1[i]);
             int num = url1[i].indexOf("=");
