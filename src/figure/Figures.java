@@ -1,4 +1,4 @@
-package Figure;
+package figure;
 
 public abstract class Figures {
     String name;

@@ -1,4 +1,4 @@
-package HumanComparator;
+package humanComparator;
 
 public class Human  {
     private int age;

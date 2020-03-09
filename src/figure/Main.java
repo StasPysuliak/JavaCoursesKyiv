@@ -1,6 +1,5 @@
-package Figure;
+package figure;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
