@@ -22,8 +22,7 @@ public class Main {
         for (String e : ext) {
             File[] files = dir.listFiles(new MyFileFilter(e));
             for (int i = 0; i < files.length; i++) {
-                list.add(srcPath + files[i].getName());
-                //list.add (files[i].getCanonicalPath());
+                list.add (files[i].getCanonicalPath());
             }
         }
     }
@@ -31,7 +30,7 @@ public class Main {
         ArrayList<String> list = new ArrayList<String>();
         String[] ext = {".txt",".pdf",".iso"};
         try {
-            findFiles("c:\\folder", ext, list);
+            findFiles("C:\\Users\\Stanislav\\Desktop\\Monitor", ext, list);
         } catch (IOException ex) {}
         for (String s : list)
             System.out.println(s);

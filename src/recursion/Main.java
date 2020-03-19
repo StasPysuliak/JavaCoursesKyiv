@@ -15,6 +15,7 @@ public class Main {
 
             boolean fileIf = filename.lastIndexOf('.') >= 5 && filename.charAt(1) == 'A';
             boolean directoryIf = filename.length() > 4 && filename.charAt(1) == 'A';
+
             if (fileIf && f.isFile()) {
                 res.add("File: " + f.getCanonicalPath());
             } else if (directoryIf && f.isDirectory()){
@@ -27,7 +28,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        final String path = "C:\\folder";
+        final String path = "C:\\Users\\Stanislav\\Desktop\\Monitor";
         ArrayList<String> res = new ArrayList<String>();
 
         try {
