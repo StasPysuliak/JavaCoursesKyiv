@@ -1,29 +1,35 @@
-import java.awt.*;
-import javax.swing.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
 
-class Gr1 extends JFrame{
+public class Main {
 
-    Gr1(String s){
-        super(s);
-        setLayout(null);
-        setSize(300,500);
-        setVisible(true);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    public static void main(String [] a)  {
+
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+
+        System.out.print("Выводит все числа: ");
+        evaluate(list, (n)->true);
+
+        System.out.print("Не выводит ни одного числа: ");
+        evaluate(list, (n)->false);
+
+        System.out.print("Вывод четных чисел: ");
+        evaluate(list, (n)-> n%2 == 0 );
+
+        System.out.print("Вывод нечетных чисел: ");
+        evaluate(list, (n)-> n%2 == 1 );
+
+        System.out.print("Вывод чисел больше 5: ");
+        evaluate(list, (n)-> n > 5 );
+
     }
-
-    public void paint(Graphics my_picture){
-        my_picture.setColor(Color.LIGHT_GRAY);
-        my_picture.fillRect(0, 0, 300, 500);
-        my_picture.setColor(Color.BLACK);
-        my_picture.drawOval(90, 50, 100, 100);
-        my_picture.drawLine(140, 150, 140, 300);
-        my_picture.drawLine(140, 300, 100, 400);
-        my_picture.drawLine(140, 300, 180, 400);
-        my_picture.drawLine(140, 200, 75, 250);
-        my_picture.drawLine(140, 200, 205, 250);
-    }
-
-    public static void main(String[] args) {
-        new Gr1("");
+    public static void evaluate(List<Integer> list, Predicate<Integer> predicate) {
+        for(Integer n: list)  {
+            if(predicate.test(n)) {
+                System.out.print(n + " ");
+            }
+        }
+        System.out.println();
     }
 }
