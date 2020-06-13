@@ -10,7 +10,8 @@ public class Main {
                 new Circle("Circle",5,10)
         };
 
-        Arrays.sort(figures,new FiguresComparator());
+        Arrays.sort(figures,new FiguresComparator());                                               //"Comparator Sort
+        //Arrays.sort(figures,(figures1,figures2)-> (int) (figures2.getArea()-figures1.getArea())); //Lambda Sort
 
         for (Figures f : figures) {
             System.out.println(f.name + "   " + f.getArea());

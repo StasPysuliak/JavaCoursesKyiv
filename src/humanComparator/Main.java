@@ -10,13 +10,16 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Sort by min or max");
-        String comp = scanner.next();
+        String comp = scanner.nextLine();
 
-        if (comp == "min")
-            Arrays.sort(list,new MinAgeComparator());
-        else if (comp == "max")
-            Arrays.sort(list,new MaxAgeComparator());
-
+        if (comp.equals("min")) {
+            //Arrays.sort(list, new MinAgeComparator());                            //Comparator Sort
+            Arrays.sort(list,(list1,list2)->(int) list1.getAge()-list2.getAge()); //Lambda Sort
+        }
+        if (comp.equals("max")) {
+            Arrays.sort(list,new MaxAgeComparator());                              //Comparator Sort
+            //Arrays.sort(list,(list1,list2)->(int) list2.getAge()-list1.getAge());  //Lambda Sort
+        }
         for (Human h :list)
             System.out.println(h.getAge());
     }
