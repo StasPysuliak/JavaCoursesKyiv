@@ -1,4 +1,4 @@
-package Test2;
+package fact;
 
 import java.math.BigInteger;
 
