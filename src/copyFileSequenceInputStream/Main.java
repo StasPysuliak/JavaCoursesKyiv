@@ -1,5 +1,6 @@
 package copyFileSequenceInputStream;
-
+//Написать программу, которая скопирует несколько файлов в один.
+//Подумать как для этого использовать java.io.SequenceInputStream.
 public class Main {
     public static void main(String[] args) {
 

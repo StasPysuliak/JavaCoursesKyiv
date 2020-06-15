@@ -1,5 +1,5 @@
 package fileInfo;
-
+//Написать программу, которая создаст текстовый файл и запишет в него список файлов (путь, имя, дата создания) из заданного каталога.
 public class Main {
     public static void main(String[] args) {
 

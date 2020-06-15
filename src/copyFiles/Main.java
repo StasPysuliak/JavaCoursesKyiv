@@ -1,5 +1,5 @@
 package copyFiles;
-
+//Написать программу для копирования всех файлов из одного каталога в другой.
 public class Main {
     public static void main(String[] args) {
         CopyFifesFirstWay copyFifesF = new CopyFifesFirstWay();

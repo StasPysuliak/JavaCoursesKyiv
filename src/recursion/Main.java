@@ -3,7 +3,7 @@ package recursion;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-
+//Написать рекурсивную ф-ю для вывода на экран всех файлов и каталогов, имя которых длиннее 5 символов и вторая буква равна ‘A’.
 public class Main {
 
     private static void listAll(String path, ArrayList<String> res) throws IOException {
