@@ -1,30 +1,24 @@
 package peopleSerialization;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
+//Написать программу, которая запросит ввести с консоли информацию о 10 людях, запишет ее на диск, а при следующем
+//старте прочитает записи и выведет сохраненные данные на экран
 public class Main {
     public static void main(String[] args) {
+        PeopleList peopleList = new PeopleList();
 
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        List<People> list = new ArrayList<>();
-
-
-        for (int i = 0; i < 10; i++) {
-            try {
-                System.out.println("Please enter: Name SurName and age");
-                System.out.println("Example: Ryan Reynolds 43");
-                String peopleData = bf.readLine();
-                list.add(new People(peopleData.split(" ")[0], peopleData.split(" ")[1],
-                                    Integer.parseInt(peopleData.split(" ")[2])));
-            }
-            catch (Exception e) {
-                ;
-            }
+        File humanFile = new File("people.txt");
+        if (humanFile.exists() && humanFile.isFile() && (humanFile.length() > 0)) {
+            new PeopleSerialization().peopleDeserialization(2,peopleList);
+            System.out.println(peopleList.getPeopleList());
         }
-        System.out.println(list);
+        else {
+            peopleList.peopleMaker();
+            new PeopleSerialization().peopleSerialization(peopleList.getPeopleList());
 
+        }
     }
 }
