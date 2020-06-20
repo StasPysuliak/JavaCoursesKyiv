@@ -5,7 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
+//Написать класс «человек». Реализовать его методы clone, equals, hashCode, toString.
+//Реализовать возможность сериализации для класса «человек».
 public class Main {
     public static void main(String[] args) {
 
