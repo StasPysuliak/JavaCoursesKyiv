@@ -4,11 +4,12 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 public class Serialization {
-    public static String serialization (Object o) throws Exception {
+    public static void serialization (Object o) throws Exception {
 
         Class<?> cls = o.getClass();
         StringBuilder sb = new StringBuilder();
         Field[] fields = cls.getDeclaredFields();
+        
 
         for (Field filed : fields) {
 
@@ -30,7 +31,7 @@ public class Serialization {
                 sb.append(filed.getLong(o));
             }
 
-            sb.append(";");
+            sb.append(";\n");
         }
         return sb.toString();
     }
