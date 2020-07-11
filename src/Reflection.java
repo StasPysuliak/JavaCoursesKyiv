@@ -1,5 +1,5 @@
 import java.lang.reflect.*;
-
+//Пример
 public class  Reflection {
 
 	static private final class Test {
